@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: gh-ghactions-quay-go-dsotscsb-gitops
+  description: This is GitOps manifest for gh-ghactions-quay-go-dsotscsb   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=gh-ghactions-quay-go-dsotscsb
+    backstage.io/kubernetes-id: gh-ghactions-quay-go-dsotscsb 
+    backstage.io/techdocs-ref: dir:. 
+    github.com/project-slug: rhopp-rhtap-testing/gh-ghactions-quay-go-dsotscsb-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:gh-ghactions-quay-go-dsotscsb
